@@ -1,0 +1,17 @@
+{
+  "name": "crawlers",
+  "version": "1.0.0",
+  "description": "crawler for usa listing",
+  "main": "crawler_usa.ts",
+  "author": "erl",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "node": "^21.6.1",
+    "puppeteer": "^22.0.0",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.3.3"
+  }
+}
