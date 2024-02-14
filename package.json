@@ -6,6 +6,10 @@
   "author": "erl",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start": "ts-node crawler_usa.ts",
+    "build": "tsc"
+  },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "node": "^21.6.1",
