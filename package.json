@@ -2,21 +2,28 @@
   "name": "crawlers",
   "version": "1.0.0",
   "description": "crawler for usa listing",
-  "main": "crawler_usa.ts",
+  "main": "server.js",
   "author": "erl",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "scripts": {
-    "start": "ts-node crawler_usa.ts",
-    "build": "tsc"
+    "start": "node server.js",
+    "build": "node build"
   },
   "dependencies": {
     "axios": "^1.6.7",
     "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "global": "^4.4.0",
     "node": "^21.6.1",
+    "pm2": "^5.3.1",
     "puppeteer": "^22.0.0",
     "ts-node": "^10.9.2",
     "tsc": "^2.0.4",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
   }
 }
