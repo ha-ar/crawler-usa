@@ -9,11 +9,14 @@ start();
 async function start(firstChar, limit) {
 	fileName = 'usa_' +firstChar+"_"+ limit + '.csv';
 	for (let i = 0; i < limit; i++) {
-		getURLs(firstChar+ '/' + i, limit);
+		const links = await getURLs(firstChar+ '/' + i);
+		console.log(links.get());
+		const results = await parseData(links);
+		console.log(results);
 	}
 }
 
-async function getURLs(search, limit) {
+async function getURLs(search) {
 	const html = await fetchWithRetry('https://www.officialusa.com/p/' + search, {
 		referrerPolicy: 'strict-origin-when-cross-origin',
 		body: null,
@@ -21,14 +24,11 @@ async function getURLs(search, limit) {
 	});
 
 	const $ = cheerio.load(await html.text());
-	let links = $(
+	return $(
 		'div.container.flex-grow-1.mt-5.mb-5 > div.row.border-bottom.pb-3 > div'
 	).map((index, element) => {
 		return $(element).find('a').attr('href');
 	});
-
-	console.log(links.get());
-	parseData( links.get());
 }
 
 async function parseData(links) {
@@ -67,12 +67,9 @@ async function parseData(links) {
 			};
 			results.push(result);
 			fs.appendFileSync(fileName, result.name + ',' + result.phone + '\n');		
-			console.log(result);
-
+			return results;
 		});
 	}
-	return results;
-
 }
 
 async function fetchWithRetry(url, options, maxRetries = 50, delayMs = 2000) {

@@ -1874,6 +1874,11 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+reactjs@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/reactjs/-/reactjs-1.0.0.tgz#8db95489edc9c4fc53c530d47a2703a2ac8a1de4"
+  integrity sha512-qA9hlxvt0NJueuZ+WnFnngajVWCqtGI4/y3mAxN7U5yoiZqaGie/QIvjqI8gUOYU06bh7Qpc872CSxhZiId5Gw==
+
 read@^1.0.4:
   version "1.0.7"
   resolved "https://registry.npmjs.org/read/-/read-1.0.7.tgz"
