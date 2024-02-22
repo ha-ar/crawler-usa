@@ -1,7 +1,7 @@
 import express from 'express';
 import start from './crawl_usa.js';
 const app = express();
-const port = 3001;
+const port = 3000;
 let result = [];
 
 // Middleware
